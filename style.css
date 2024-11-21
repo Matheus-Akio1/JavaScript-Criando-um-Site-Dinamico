@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-primaria: #F55B64;
+    --cor-secundaria: #C2373F;
+    --neutro: #F9F9F9;
+    --preto: #131730;
+    --fonte-titulo: "Krona One", sans-serif;
+    --fonte-texto: 'Numans', sans-serif;
+    --degrade-azul: linear-gradient(180deg, #000000 0%, #26327F 100%);
+}
+
+body {
+    background: var(--degrade-azul);
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    margin-top: 64px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 440px;
+    align-items: center;
+
+    background-color: var(--neutro);
+    padding: 56px;
+    border-radius: 16px;
+}
+
+h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: left;
+}
+
+hr {
+    border: none;
+    border-bottom: 3px dotted var(--cor-primaria);
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+p {
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.input-item {
+    padding: 12px 16px; /*Definido espacamento de 12px a cima e a baixo e espaco de 16px aos lados*/
+    display: block; /*Selecionando que ele ocupara todo o espaco do texto*/
+    border-radius: 24px; /*Definindo o arredondamento da borda em 24px*/
+    border: 1px solid var(--preto); /*Definindo a borda de 1px,solida e preta*/
+    width: 307px; /*Definido largura*/
+}
+
+.input-item::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#adicionar-botao {
+    text-align: center; /*Alinhando o texto ao centro do botao*/
+    padding: 12px 16px; /*Definindo os espacos do botao*/
+    border-radius: 24px; /*Definindo o arredondamento*/
+    background-color: var(--cor-primaria); /*Cor de fundo do botao*/
+    color: var(--neutro); /*Definindo a cor da fonte*/
+    font-family: var(--fonte-texto); /*Definindo a fonte*/
+    font-size: 18px; /*Definindo o tamanho da fonte*/ 
+    line-height: 24px; /*Definindo a altura do botao*/
+    border: none; /*Tirando a borda do botao*/
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-lista-container {
+    display: flex; /*Transformando o container em flexivel*/
+    align-items: center; /*Alinhando itens ao centro*/
+    justify-content: space-between; /*Definindo o espacamento onde o 1 fica totalmente a esquerda e o 2 totalmente a direita*/
+}
+
+.container-item-compra {
+    display: flex;
+}
+
+ul {
+    list-style-type: none; /*Remove a bolinha da lista*/
+    width: 100%; /*Define que os componentem ocupem 100% do espaco*/
+}
+
+.item-lista-texto {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.checkbox-input {
+    display: none;
+}
+
+.checkbox-customizado {
+    width: 20px; /*Definindo a largura do botao*/
+    height: 20px; /*Definindo a altura do botao*/
+    background-color: var(--neutro);
+    border: 1px solid var(--preto); /*Definindo a borda, tamanho e cor*/
+    cursor: pointer;
+    border-radius: 4px; /*Arredondando o botao*/
+    margin-right: 8px; /*Definindo o espaco que o texto ira ficar do botao*/
+}
+
+.checked {
+    background-color: var(--preto);
+    position: relative; /*Definindo a posicao do botao check para relativo para que eu possa manipular as posicoes*/
+}
+
+.checked::after {
+    content: "";
+    position: absolute; /*Definindo as posicoes que eu quero*/
+    left: 30%; /*Definindo o local onde ira ficar o desenho de check*/
+    top: -10%; /*Definindo o local onde ira ficar o desenho de check*/
+    width: 5px; /*Defininfo a largura do desenho de check*/
+    height: 14px; /*Definindo o tamanho do desenho de check*/
+
+    border-top: 2px solid var(--neutro); /*Criando o desenho de check*/
+    border-left: 2px solid var(--neutro); /*Criando o desenho de check*/
+    transform:  rotate(-140deg); /*Rotacionando o botao*/
+}
+
+.botao-acao {
+    background-color: transparent; /*Definindo o fundo como transparente*/
+    border: none; /*Retirando as bordas*/
+}
